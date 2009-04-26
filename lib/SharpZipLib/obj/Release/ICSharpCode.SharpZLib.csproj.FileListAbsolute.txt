@@ -1,0 +1,14 @@
+C:\Documents and Settings\fredrik.modeen\My Documents\Visual Studio 2008\Projects\HaikuOnAStick\HaikuOnAStick\lib\bin\ICSharpCode.SharpZipLib.xml
+C:\Documents and Settings\fredrik.modeen\My Documents\Visual Studio 2008\Projects\HaikuOnAStick\HaikuOnAStick\lib\bin\ICSharpCode.SharpZipLib.dll
+C:\Documents and Settings\fredrik.modeen\My Documents\Visual Studio 2008\Projects\HaikuOnAStick\HaikuOnAStick\lib\SharpZipLib\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\fredrik.modeen\My Documents\Visual Studio 2008\Projects\HaikuOnAStick\HaikuOnAStick\lib\SharpZipLib\obj\Release\ICSharpCode.SharpZipLib.dll
+C:\Documents and Settings\fredrik.modeen\My Documents\Visual Studio 2008\Projects\HaikuOnAStick\HaikuOnAStick\lib\bin\Release\ICSharpCode.SharpZipLib.dll.config
+C:\Documents and Settings\fredrik.modeen\My Documents\Visual Studio 2008\Projects\HaikuOnAStick\HaikuOnAStick\lib\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Documents and Settings\fredrik.modeen\My Documents\Visual Studio 2008\Projects\HaikuOnAStick\HaikuOnAStick_src\lib\bin\Release\ICSharpCode.SharpZipLib.dll.config
+C:\Documents and Settings\fredrik.modeen\My Documents\Visual Studio 2008\Projects\HaikuOnAStick\HaikuOnAStick_src\lib\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Documents and Settings\fredrik.modeen\My Documents\Visual Studio 2008\Projects\HaikuOnAStick\HaikuOnAStick_src\lib\SharpZipLib\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\fredrik.modeen\My Documents\Visual Studio 2008\Projects\HaikuOnAStick\HaikuOnAStick_src\lib\SharpZipLib\obj\Release\ICSharpCode.SharpZipLib.dll
+C:\Documents and Settings\ModeenF\Mina dokument\Visual Studio 2008\Projects\HaikuOnAStick\lib\bin\Release\ICSharpCode.SharpZipLib.dll.config
+C:\Documents and Settings\ModeenF\Mina dokument\Visual Studio 2008\Projects\HaikuOnAStick\lib\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Documents and Settings\ModeenF\Mina dokument\Visual Studio 2008\Projects\HaikuOnAStick\lib\SharpZipLib\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\ModeenF\Mina dokument\Visual Studio 2008\Projects\HaikuOnAStick\lib\SharpZipLib\obj\Release\ICSharpCode.SharpZipLib.dll
