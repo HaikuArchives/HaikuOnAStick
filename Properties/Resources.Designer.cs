@@ -115,6 +115,15 @@ namespace Haiku.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Catching data from server...
+        /// </summary>
+        internal static string GETTING_DATA_FROM_SERVER {
+            get {
+                return ResourceManager.GetString("GETTING_DATA_FROM_SERVER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An IOException accured probably are the filesystem not recognized \nWe will run any way but you will need to check that your USB are atleast.
         /// </summary>
         internal static string IOEXEPTION_RUN_ANYWAY {

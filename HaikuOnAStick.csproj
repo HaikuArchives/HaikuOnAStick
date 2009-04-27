@@ -70,6 +70,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="HaikuOnAStick.de-DE.resx">
+      <DependentUpon>HaikuOnAStick.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HaikuOnAStick.resx">
       <DependentUpon>HaikuOnAStick.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -83,6 +86,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.sv.resx">
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.de-DE.resx" />
     <None Include="app.config" />
     <None Include="flashnul\flashnul.conf" />
     <None Include="Properties\Settings.settings">

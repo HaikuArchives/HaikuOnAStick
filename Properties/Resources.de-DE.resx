@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,105 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnBrowse.Text" xml:space="preserve">
-    <value>Visa</value>
+  <data name="ACTION" xml:space="preserve">
+    <value>Aktion</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 13</value>
+  <data name="DECOMPRESSING" xml:space="preserve">
+    <value>Entpacke</value>
   </data>
-  <data name="lblImage.Text" xml:space="preserve">
-    <value>Fil</value>
+  <data name="DONE" xml:space="preserve">
+    <value>Fertig</value>
   </data>
-  <data name="lblFromServer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 13</value>
+  <data name="DONE_DECOMPRESSING" xml:space="preserve">
+    <value>Done Decompressing</value>
+    <comment>Not translated</comment>
   </data>
-  <data name="lblFromServer.Text" xml:space="preserve">
-    <value>Från Server</value>
+  <data name="DOWNLOADING" xml:space="preserve">
+    <value>Herunterladen</value>
   </data>
-  <data name="grpBoxDownload.Text" xml:space="preserve">
-    <value>Ladda ner</value>
+  <data name="FOUND" xml:space="preserve">
+    <value>Gerät gefunden</value>
   </data>
-  <data name="labl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 13</value>
+  <data name="GETTING_DATA_FROM_SERVER" xml:space="preserve">
+    <value>Hole Daten vom Server</value>
   </data>
-  <data name="labl1.Text" xml:space="preserve">
-    <value>Eller</value>
+  <data name="IOEXEPTION_RUN_ANYWAY" xml:space="preserve">
+    <value>Ein Fehler trat auf, möglicherweise wurde das Dateisystem nicht erkannt\nEs geht weiter, aber Sie müssen prüfen ob Ihr USB die Mindestgröße von</value>
   </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>U</value>
+  <data name="NOT_FOUND" xml:space="preserve">
+    <value>Kein Gerät gefunden</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Mål Enhet</value>
+  <data name="NOT_SELECTED" xml:space="preserve">
+    <value>You have not selected a destination</value>
+    <comment>Not translated</comment>
   </data>
-  <data name="btnWriteToUSB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>76, 453</value>
+  <data name="NO_ROOM" xml:space="preserve">
+    <value>Nicht genug Platz auf Ihrem Gerät zum Herunterladen und Entpacken einer Image-Datei</value>
   </data>
-  <data name="btnWriteToUSB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 23</value>
+  <data name="QUESTION_WRITE_TO" xml:space="preserve">
+    <value>Image wirklich schreiben auf</value>
   </data>
-  <data name="btnWriteToUSB.Text" xml:space="preserve">
-    <value>Skriv till USB</value>
+  <data name="SELECTED_FILE" xml:space="preserve">
+    <value>Ihre gewählte Datei</value>
   </data>
-  <data name="lblAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 13</value>
+  <data name="START_DECOMPRESSING" xml:space="preserve">
+    <value>Entpacken Starten</value>
   </data>
-  <data name="lblAction.Text" xml:space="preserve">
-    <value>Händelse 1/3</value>
+  <data name="START_WRITE_TO_USB" xml:space="preserve">
+    <value>Starte Schreiben auf USB</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 13</value>
+  <data name="WRITE_TO_USB" xml:space="preserve">
+    <value>Schreibe Image auf USB</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Totalt</value>
+  <data name="WRITING_TO_USB" xml:space="preserve">
+    <value>Writing to USB</value>
+    <comment>Not translated</comment>
   </data>
-  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>245, 453</value>
-  </data>
-  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 23</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Stopp</value>
-  </data>
-  <data name="grpBoxBrowse.Text" xml:space="preserve">
-    <value>Existerande fil</value>
-  </data>
-  <data name="useDDToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
-  </data>
-  <data name="useDDToolStripMenuItem.Text" xml:space="preserve">
-    <value>Använd DD</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="useDDToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="useFlashnulToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
-  </data>
-  <data name="useFlashnulToolStripMenuItem.Text" xml:space="preserve">
-    <value>Använd Flashnul</value>
-  </data>
-  <data name="uSBWriterToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 22</value>
-  </data>
-  <data name="uSBWriterToolStripMenuItem.Text" xml:space="preserve">
-    <value>USB Skrivare</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 6</value>
-  </data>
-  <data name="closeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 22</value>
-  </data>
-  <data name="closeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Stäng</value>
-  </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 20</value>
-  </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Fil</value>
+  <data name="YOU_HAVE_CANCELED" xml:space="preserve">
+    <value>Sie haben den Vorgang abgebrochen</value>
   </data>
 </root>

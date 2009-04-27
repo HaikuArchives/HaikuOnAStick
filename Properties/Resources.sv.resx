@@ -135,6 +135,9 @@
   <data name="FOUND" xml:space="preserve">
     <value>Enhet hittad</value>
   </data>
+  <data name="GETTING_DATA_FROM_SERVER" xml:space="preserve">
+    <value>Hämtar data från server..</value>
+  </data>
   <data name="IOEXEPTION_RUN_ANYWAY" xml:space="preserve">
     <value>An IOException accured probably are the filesystem not recognized \nWe will run any way but you will need to check that your USB are atleast</value>
   </data>
