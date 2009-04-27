@@ -17,5 +17,8 @@
     <Setting Name="FlashFileSource" Type="System.String" Scope="Application">
       <Value Profile="(Default)"> {0} -L "{1}"</Value>
     </Setting>
+    <Setting Name="FileFilter" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">"Image file (*.image)|*.image|Zip files(*.zip)|*.zip"</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

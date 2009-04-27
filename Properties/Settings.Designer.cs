@@ -67,5 +67,14 @@ namespace Haiku.Properties {
                 return ((string)(this["FlashFileSource"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\"Image file (*.image)|*.image|Zip files(*.zip)|*.zip\"")]
+        public string FileFilter {
+            get {
+                return ((string)(this["FileFilter"]));
+            }
+        }
     }
 }

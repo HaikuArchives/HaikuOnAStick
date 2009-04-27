@@ -9,6 +9,10 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Text.RegularExpressions;
 
+using System.Reflection;
+using System.Globalization;
+using System.Resources;
+
 using ICSharpCode.SharpZipLib.Zip;
 using ICSharpCode.SharpZipLib.Core;
 
@@ -44,6 +48,8 @@ namespace Haiku
         private int fAtStep = 1;
         private Classes.Server fServer;
 
+        private ResourceManager fResourceManager;
+
         private Thread fThread;        
         private delegate void WriteToProgressbar(int i);
         private delegate void WriteAString(string str);
@@ -68,27 +74,34 @@ namespace Haiku
         #endregion
         public HaikuOnAStick()
         {
+            fResourceManager = new ResourceManager("Haiku.Properties.Resources", Assembly.GetExecutingAssembly());
             InitializeComponent();            
             fColorBrowse = grpBoxBrowse.BackColor;
             fColorNetwork = grpBoxDownload.BackColor;
-            openFileDialog.Filter = "Image file (*.image)|*.image|Zip files(*.zip)|*.zip";
+            openFileDialog.Filter = Settings.Default.FileFilter;
             fBaseDirectory = @AppDomain.CurrentDomain.BaseDirectory;
             openFileDialog.InitialDirectory = fBaseDirectory;
             btnRefresh_Click(null, null);            
             GetServers();
         }
         #region Developer Made methods
+        public void Log(string str)
+        {
+            string temp = richTextBox.Text;
+            richTextBox.Text = str + "\n";
+            richTextBox.Text += temp;
+        }
+
         private void LogError(string str)
         {
             fErrorHappend = true;
             Log(str);
             SetGUI(true);
         }
-        public void Log(string str)
+
+        private string GetString(string str)
         {
-            string temp = richTextBox.Text;
-            richTextBox.Text = str + "\n";
-            richTextBox.Text += temp;
+            return fResourceManager.GetString(str);
         }
 
         private void WriteToProgressBarAction(int i)
@@ -121,7 +134,7 @@ namespace Haiku
         }
         private void GetServerData()
         {
-            richTextBox.Invoke(new WriteAString(this.Log), "Get data from server " + fServer.ServerName);
+            richTextBox.Invoke(new WriteAString(this.Log), GetString("GETTING_DATA_FROM_SERVER") + " " + fServer.ServerName);
             WebRequest myWebRequest = null;
             WebResponse myWebResponse = null;
             StreamReader readStream = null;
@@ -172,7 +185,7 @@ namespace Haiku
 
         private void WriteActionLable(string str)
         {
-            lblAction.Text = String.Format("Action {0}/{1} : {2}", fAtStep, fSteps, str);
+            lblAction.Text = GetString("ACTION") + String.Format(" {0}/{1} : {2}", fAtStep, fSteps, str);
         }
        
         #region SetGUI
@@ -219,9 +232,9 @@ namespace Haiku
         }
         private void DecompressFile(string sourceFile)
         {
-            Log("Start Decompressing");
+            Log(GetString("START_DECOMPRESSING"));
             fAtStep = fSteps - 1;
-            WriteActionLable("Decompressing");
+            WriteActionLable(GetString("DECOMPRESSING"));
             fSourceFile = sourceFile;
             fThread = new Thread(new ThreadStart(DecompressFile));
             fThread.Start();
@@ -253,9 +266,9 @@ namespace Haiku
         }
         private void WriteToFlash(string imageName)
         {
-            Log("Start Writing to USB");
+            Log(GetString("START_WRITE_TO_USB"));
             fAtStep = fSteps;
-            WriteActionLable("Writing to USB");
+            WriteActionLable(GetString("WRITING_TO_USB"));
             string file = fBaseDirectory;
             
             if (useFlashnulToolStripMenuItem.Checked)
@@ -293,7 +306,7 @@ namespace Haiku
             grpBoxBrowse.Invoke(new ChangeColor(this.ChangeColorGroupBox), new object[] { grpBoxBrowse, fColorBrowse });
             grpBoxDownload.Invoke(new ChangeColor(this.ChangeColorGroupBox), new object[] { grpBoxDownload, fColorNetwork });
             this.Invoke(new SetGUISettings(this.SetGUI), true);
-            lblAction.Invoke(new WriteAString(this.WriteActionLable), "Done");
+            lblAction.Invoke(new WriteAString(this.WriteActionLable), GetString("DONE"));
             progressBar1.Invoke(new WriteToProgressbar(this.WriteToProgressBarTotal), 100);
         }
 
@@ -323,7 +336,7 @@ namespace Haiku
         #region Events       
         private void CompletedFile(object sender, ScanEventArgs e)
         {
-            richTextBox.Invoke(new WriteTwoStrings(this.DoneDecompressFile), new object[] { "Done Decompressing", fBaseDirectory + e.Name });
+            richTextBox.Invoke(new WriteTwoStrings(this.DoneDecompressFile), new object[] { GetString("DONE_DECOMPRESSING"), fBaseDirectory + e.Name });
         }
         private void FileFailure(object sender, ScanFailureEventArgs e)
         {
@@ -344,13 +357,13 @@ namespace Haiku
                 HttpWebResponse webResponse = (HttpWebResponse)webRequest.GetResponse();
                 if (!HasRoomForImageAndDownload((int)(webResponse.ContentLength / 1024) / 1024))
                 {
-                    string temp = "You don't have room on your drive to download and extract an image";
+                    string temp = GetString("NO_ROOM");
                     Log(temp);
                     MessageBox.Show(temp);
                     return;
                 }
 
-                WriteActionLable("Downloading");
+                WriteActionLable(GetString("DOWNLOADING"));
                 webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadFileCallback);
                 webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadProgressCallback);
                 webClient.DownloadFileAsync(uri, filename);
@@ -373,7 +386,7 @@ namespace Haiku
         {
             if (chkListBox.CheckedItems.Count == 0)
             {
-                MessageBox.Show("You have not selected a destination");
+                MessageBox.Show(GetString("NOT_SELECTED"));
                 return;
             }
             SetSelectedPart(false, false);
@@ -383,7 +396,7 @@ namespace Haiku
             progressBar1.Value = 0;
             WriteActionLable("");
             fOpenFileName = "";            
-            Log("You have selected file " + cmbImage.SelectedItem.ToString());
+            Log(GetString("SELECTED_FILE") + " " + cmbImage.SelectedItem.ToString());
         }
         private void cmbServer_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -416,9 +429,7 @@ namespace Haiku
                     }
                     catch (IOException)
                     {
-                        Log("An IOException accured probably are the filesystem not recognized"
-                            + "\nWe will run any way but you will need to check that your USB "
-                            + "are atleast " + Properties.Settings.Default.USBMemorySize + " big");
+                        Log(GetString("IOEXEPTION_RUN_ANYWAY") + " " + Properties.Settings.Default.USBMemorySize);
 
                         if (!chkListBox.Items.Contains(dirName))
                             chkListBox.Items.Add(dirName);
@@ -433,10 +444,10 @@ namespace Haiku
             if (chkListBox.Items.Count > 0)
             {
                 fDeviceExist = true;
-                Log("Device found..");
+                Log(GetString("FOUND"));
             }
             else
-                Log("No Device was found");
+                Log(GetString("NOT_FOUND"));
 
             if (obj.Count > 0)
             {
@@ -452,7 +463,7 @@ namespace Haiku
         {
             if (chkListBox.CheckedItems.Count == 0)
             {
-                MessageBox.Show("You have not selected a destination");
+                MessageBox.Show(GetString("NOT_SELECTED"));
                 return;
             }
 
@@ -462,11 +473,13 @@ namespace Haiku
                 fOpenFileName = openFileDialog.FileName;
                 string str = openFileDialog.SafeFileName.ToLower();
                 string[] temp = str.Split(new char[]{'.'});
+                
                 if (temp[temp.Length-1].ToString().Equals("image"))
                     fSteps = 1;
                 else
                     fSteps = 2;
-                Log("You have selected file " + fOpenFileName);
+
+                Log(GetString("SELECTED_FILE") + " " + fOpenFileName);
                 SetSelectedPart(true, false);
                 grpBoxBrowse.BackColor = Color.AliceBlue;
                 grpBoxDownload.BackColor = fColorNetwork;                
@@ -475,7 +488,6 @@ namespace Haiku
                 grpBoxBrowse.Focus();
                 Invalidate();
             }
-
             else if (result == DialogResult.Cancel)
             {
                 fOpenFileName = "";
@@ -490,7 +502,7 @@ namespace Haiku
                 str += itemChecked.ToString() + ", ";
             }
 
-            DialogResult dr = MessageBox.Show("Do you realy want to write a image to " + str, "Write image to USB", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show(GetString("QUESTION_WRITE_TO") + " " + str, GetString("WRITE_TO_USB"), MessageBoxButtons.YesNo);
             if (dr != DialogResult.Yes)
             {
                 SetGUI(true);
@@ -525,7 +537,7 @@ namespace Haiku
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Log("You have Canceled");
+            Log(GetString("YOU_HAVE_CANCELED"));
             grpBoxBrowse.BackColor = fColorBrowse;
             grpBoxDownload.BackColor = fColorNetwork;
             SetGUI(true);
