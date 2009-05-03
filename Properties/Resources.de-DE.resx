@@ -130,6 +130,10 @@
     <value>Done Decompressing</value>
     <comment>Not translated</comment>
   </data>
+  <data name="DONE_GETTING_SERVER_DATA" xml:space="preserve">
+    <value>Done getting server data</value>
+    <comment>Not translated</comment>
+  </data>
   <data name="DOWNLOADING" xml:space="preserve">
     <value>Herunterladen</value>
   </data>

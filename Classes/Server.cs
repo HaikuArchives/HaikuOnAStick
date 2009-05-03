@@ -15,11 +15,13 @@ namespace Haiku.Classes
         private string fServerName;
         private string fServerFullPath;
         private string fServerPath;
-        public Server(string server)
-        {
-            string[] st = server.Split('/');            
-            fServerName = st[2];
+        public Server(string server, string serverText)
+        {            
+            fServerName = serverText.Trim();
             fServerFullPath = server;
+
+            //remove the last php part
+            string[] st = server.Split('/');
             fServerPath = server.Replace(st[st.Length-1], "");
         }
 
@@ -27,7 +29,7 @@ namespace Haiku.Classes
         {
             get { return fServerName; }            
         }
-
+        
         public string ServerFullPath
         {
             get { return fServerFullPath; }

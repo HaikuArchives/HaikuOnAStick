@@ -97,6 +97,15 @@ namespace Haiku.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Done getting server data.
+        /// </summary>
+        internal static string DONE_GETTING_SERVER_DATA {
+            get {
+                return ResourceManager.GetString("DONE_GETTING_SERVER_DATA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Downloading.
         /// </summary>
         internal static string DOWNLOADING {

@@ -122,9 +122,13 @@ namespace Haiku
         private void GetServers()
         {
             string[] str = Properties.Settings.Default.ServerUrl.Split(';');
-            foreach(string s in str)
-            {                
-                cmbServer.Items.Add(new Classes.Server(s));
+            string[] strText = Properties.Settings.Default.ServerUrlText.Split(';');
+            if(str.Length == strText.Length)
+            {
+                for (int i = 0; i < str.Length; i++)
+                {
+                    cmbServer.Items.Add(new Classes.Server(str[i], strText[i]));
+                }
             }
         }
         private void AddObjectComboBox(Object obj)
@@ -179,7 +183,7 @@ namespace Haiku
                     readStream.Close();
                     myWebResponse.Close();
                 }
-                richTextBox.Invoke(new WriteAString(this.Log), "Done getting server data");
+                richTextBox.Invoke(new WriteAString(this.Log), GetString("DONE_GETTING_SERVER_DATA"));
             }
         }
 
@@ -403,6 +407,7 @@ namespace Haiku
             ComboBox cb = sender as ComboBox;
             if (cb != null)
             {
+                cmbImage.Items.Clear();
                 fServer = cb.SelectedItem as Classes.Server;
                 fThread = new Thread(new ThreadStart(GetServerData));
                 fThread.Start();

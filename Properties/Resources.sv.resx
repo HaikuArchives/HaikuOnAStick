@@ -129,6 +129,9 @@
   <data name="DONE_DECOMPRESSING" xml:space="preserve">
     <value>Uppackning klar</value>
   </data>
+  <data name="DONE_GETTING_SERVER_DATA" xml:space="preserve">
+    <value>Klar med hämtning av server data</value>
+  </data>
   <data name="DOWNLOADING" xml:space="preserve">
     <value>Laddar ner</value>
   </data>

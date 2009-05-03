@@ -25,15 +25,6 @@ namespace Haiku.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://haiku-files.org/raw/index.php")]
-        public string ServerUrl {
-            get {
-                return ((string)(this["ServerUrl"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("flashnul.exe")]
         public string FlashFileName {
             get {
@@ -74,6 +65,25 @@ namespace Haiku.Properties {
         public string FileFilter {
             get {
                 return ((string)(this["FileFilter"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://haiku-files.org/raw/index.php; http://haiku-files.org/raw/index.php?ShowAl" +
+            "l")]
+        public string ServerUrl {
+            get {
+                return ((string)(this["ServerUrl"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("haiku-files.org; haiku-files.org ShowAll")]
+        public string ServerUrlText {
+            get {
+                return ((string)(this["ServerUrlText"]));
             }
         }
     }

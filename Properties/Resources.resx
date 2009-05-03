@@ -129,6 +129,9 @@
   <data name="DONE_DECOMPRESSING" xml:space="preserve">
     <value>Done Decompressing</value>
   </data>
+  <data name="DONE_GETTING_SERVER_DATA" xml:space="preserve">
+    <value>Done getting server data</value>
+  </data>
   <data name="DOWNLOADING" xml:space="preserve">
     <value>Downloading</value>
   </data>
