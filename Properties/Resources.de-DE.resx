@@ -140,7 +140,7 @@
     <value>Hole Daten vom Server</value>
   </data>
   <data name="IOEXEPTION_RUN_ANYWAY" xml:space="preserve">
-    <value>Ein Fehler trat auf, möglicherweise wurde das Dateisystem nicht erkannt\nEs geht weiter, aber Sie müssen prüfen ob Ihr USB die Mindestgröße von</value>
+    <value>Ein Fehler trat auf, möglicherweise wurde das Dateisystem nicht erkannt. Es geht weiter, aber Sie müssen prüfen ob Ihr USB die Mindestgröße von</value>
   </data>
   <data name="NOT_FOUND" xml:space="preserve">
     <value>Kein Gerät gefunden</value>

@@ -139,7 +139,7 @@
     <value>Hämtar data från server..</value>
   </data>
   <data name="IOEXEPTION_RUN_ANYWAY" xml:space="preserve">
-    <value>An IOException accured probably are the filesystem not recognized \nWe will run any way but you will need to check that your USB are atleast</value>
+    <value>Ett IOException hände, förmodligen känns inte filsystemet igen. Vi kör ändå men du måste kontrollera att ditt USB minne har rätt mängd minne.</value>
   </data>
   <data name="NOT_FOUND" xml:space="preserve">
     <value>Inga enheter hittade</value>

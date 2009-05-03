@@ -139,7 +139,7 @@
     <value>Catching data from server..</value>
   </data>
   <data name="IOEXEPTION_RUN_ANYWAY" xml:space="preserve">
-    <value>An IOException accured probably are the filesystem not recognized \nWe will run any way but you will need to check that your USB are atleast</value>
+    <value>An IOException accured probably are the filesystem not recognized. We will run any way but you will need to check that your USB are atleast</value>
   </data>
   <data name="NOT_FOUND" xml:space="preserve">
     <value>No Device was found</value>
