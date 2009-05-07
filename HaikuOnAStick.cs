@@ -397,6 +397,7 @@ namespace Haiku
             grpBoxBrowse.BackColor = fColorBrowse;
             grpBoxDownload.BackColor = Color.AliceBlue;
             fSteps = 3;
+            fAtStep = 1;
             progressBar1.Value = 0;
             WriteActionLable("");
             fOpenFileName = "";            
@@ -484,6 +485,7 @@ namespace Haiku
                 else
                     fSteps = 2;
 
+                fAtStep = 1;
                 Log(GetString("SELECTED_FILE") + " " + fOpenFileName);
                 SetSelectedPart(true, false);
                 grpBoxBrowse.BackColor = Color.AliceBlue;

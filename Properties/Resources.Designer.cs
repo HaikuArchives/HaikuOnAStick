@@ -169,7 +169,7 @@ namespace Haiku.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you realy want to write a image to.
+        ///   Looks up a localized string similar to Do you really want to write an image to.
         /// </summary>
         internal static string QUESTION_WRITE_TO {
             get {

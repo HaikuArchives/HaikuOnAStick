@@ -15,7 +15,7 @@
       <Value Profile="(Default)"> {0} -L "{1}"</Value>
     </Setting>
     <Setting Name="FileFilter" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">"Image file (*.image)|*.image|Zip files(*.zip)|*.zip"</Value>
+      <Value Profile="(Default)">Image file (*.image)|*.image|Zip files (*.zip)|*.zip</Value>
     </Setting>
     <Setting Name="ServerUrl" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://haiku-files.org/raw/index.php; http://haiku-files.org/raw/index.php?ShowAll</Value>

@@ -154,7 +154,7 @@
     <value>You don't have room on your drive to download and extract an image</value>
   </data>
   <data name="QUESTION_WRITE_TO" xml:space="preserve">
-    <value>Do you realy want to write a image to</value>
+    <value>Do you really want to write an image to</value>
   </data>
   <data name="SELECTED_FILE" xml:space="preserve">
     <value>You have selected file</value>
