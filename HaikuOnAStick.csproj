@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,10 +10,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Haiku</RootNamespace>
     <AssemblyName>HaikuOnAStick</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkSubset>
-    </TargetFrameworkSubset>
     <StartupObject>Haiku.Program</StartupObject>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <PublishUrl>http://localhost/HaikuOnAStick/</PublishUrl>
@@ -70,9 +68,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="HaikuOnAStick.de-DE.resx">
-      <DependentUpon>HaikuOnAStick.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HaikuOnAStick.resx">
       <DependentUpon>HaikuOnAStick.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -86,7 +81,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.sv.resx">
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.de-DE.resx" />
     <None Include="app.config" />
     <None Include="flashnul\flashnul.conf" />
     <None Include="Properties\Settings.settings">
